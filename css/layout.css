@@ -211,7 +211,7 @@
     width: 100%;
     height: 115%;
     object-fit: cover;
-    object-position: center 5%;
+    object-position: center top;
 }
 
 .hero-overlay {
@@ -244,24 +244,24 @@
 
 .hero-title {
     font-family: 'Fjalla One', sans-serif;
-    font-size: clamp(2.5rem, 5.5vw, 5.5rem);
+    font-size: clamp(3rem, 10vw, 11rem);
     font-weight: 400;
     letter-spacing: 0.05em;
     line-height: 1;
     margin-bottom: 28px;
-    /* Stronger horizontal fade – like outline.global */
+    /* Horizontal fade – text must be wide enough to hit the fade zones */
     -webkit-mask-image: linear-gradient(
         to right,
         transparent 0%,
-        black 20%,
-        black 80%,
+        black 18%,
+        black 82%,
         transparent 100%
     );
     mask-image: linear-gradient(
         to right,
         transparent 0%,
-        black 20%,
-        black 80%,
+        black 18%,
+        black 82%,
         transparent 100%
     );
 }
