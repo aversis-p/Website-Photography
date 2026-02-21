@@ -203,7 +203,7 @@
     width: 100%;
     height: 115%;
     object-fit: cover;
-    object-position: center top;
+    object-position: center 20%;
 }
 
 .hero-overlay {
@@ -235,20 +235,35 @@
 }
 
 .hero-title {
+    font-family: 'Fjalla One', sans-serif;
     font-size: clamp(4.5rem, 13vw, 12rem);
-    font-weight: 900;
+    font-weight: 400;
     letter-spacing: -0.04em;
     line-height: 0.88;
     display: flex;
     flex-direction: column;
     align-items: center;
     margin-bottom: 28px;
+    /* Horizontal fade effect – like outline.global */
+    -webkit-mask-image: linear-gradient(
+        to right,
+        transparent 0%,
+        black 12%,
+        black 88%,
+        transparent 100%
+    );
+    mask-image: linear-gradient(
+        to right,
+        transparent 0%,
+        black 12%,
+        black 88%,
+        transparent 100%
+    );
 }
 
-/* Second word: outlined text effect */
+/* Both words solid white – no outline effect */
 .hero-title span:last-child {
-    color: transparent;
-    -webkit-text-stroke: 1.5px rgba(232, 237, 245, 0.35);
+    color: var(--text);
 }
 
 .hero-tagline {
