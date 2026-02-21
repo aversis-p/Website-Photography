@@ -14,61 +14,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     // ===========================
-    // CUSTOM CURSOR
-    // ===========================
-    const cursor    = document.getElementById('cursor');
-    const cursorDot = document.getElementById('cursorDot');
-
-    // Only enable on non-touch devices
-    if (window.matchMedia('(pointer: fine)').matches) {
-        let mouseX = 0, mouseY = 0;
-        let curX   = 0, curY   = 0;
-
-        document.addEventListener('mousemove', (e) => {
-            mouseX = e.clientX;
-            mouseY = e.clientY;
-            cursorDot.style.left = mouseX + 'px';
-            cursorDot.style.top  = mouseY + 'px';
-        });
-
-        // Smooth lag for large cursor ring
-        function animateCursor() {
-            curX += (mouseX - curX) * 0.10;
-            curY += (mouseY - curY) * 0.10;
-            cursor.style.left = curX + 'px';
-            cursor.style.top  = curY + 'px';
-            requestAnimationFrame(animateCursor);
-        }
-        animateCursor();
-
-        // Hover grow effect
-        const hoverTargets = document.querySelectorAll('a, button, .portfolio-item, .shop-item, .filter-btn');
-        hoverTargets.forEach(el => {
-            el.addEventListener('mouseenter', () => cursor.classList.add('hovering'));
-            el.addEventListener('mouseleave', () => cursor.classList.remove('hovering'));
-        });
-
-        // Hide when leaving window
-        document.addEventListener('mouseleave', () => {
-            cursor.style.opacity    = '0';
-            cursorDot.style.opacity = '0';
-        });
-        document.addEventListener('mouseenter', () => {
-            cursor.style.opacity    = '1';
-            cursorDot.style.opacity = '1';
-        });
-    } else {
-        // Touch device – hide cursors
-        cursor.style.display    = 'none';
-        cursorDot.style.display = 'none';
-        document.body.style.cursor = 'auto';
-        document.querySelectorAll('a, button, input, textarea, select').forEach(el => {
-            el.style.cursor = 'auto';
-        });
-    }
-
-
-    // ===========================
     // NAVIGATION
     // ===========================
     const nav       = document.getElementById('nav');
