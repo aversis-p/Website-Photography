@@ -1,0 +1,139 @@
+/* ========================================
+   responsive.css – Mobile Breakpoints
+   ======================================== */
+
+/* ---- Large tablets ---- */
+@media (max-width: 1200px) {
+    .shop-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .portfolio-grid {
+        grid-auto-rows: 280px;
+    }
+}
+
+/* ---- Tablets ---- */
+@media (max-width: 1024px) {
+    .about-grid {
+        grid-template-columns: 1fr;
+        gap: 60px;
+    }
+
+    .about-image {
+        max-width: 480px;
+    }
+
+    .about-img-accent {
+        display: none;
+    }
+
+    .portfolio-grid {
+        grid-template-columns: repeat(2, 1fr);
+        grid-auto-rows: 260px;
+    }
+
+    .portfolio-wide { grid-column: span 2; }
+    .portfolio-tall { grid-row: span 1; }
+
+    .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 60px;
+    }
+}
+
+/* ---- Mobile ---- */
+@media (max-width: 768px) {
+    :root {
+        --nav-h: 64px;
+    }
+
+    section {
+        padding: 90px var(--pad);
+    }
+
+    /* Nav */
+    .nav-links,
+    .nav-instagram {
+        display: none;
+    }
+
+    .nav-toggle {
+        display: flex;
+    }
+
+    .mobile-menu {
+        display: flex;
+    }
+
+    /* Hero */
+    .hero-title {
+        font-size: clamp(3.5rem, 20vw, 6rem);
+    }
+
+    .hero-number {
+        display: none;
+    }
+
+    /* About */
+    .about-stats {
+        gap: 28px;
+    }
+
+    /* Portfolio */
+    .portfolio-grid {
+        grid-template-columns: 1fr;
+        grid-auto-rows: 280px;
+    }
+
+    .portfolio-wide { grid-column: span 1; }
+
+    .portfolio-header {
+        flex-direction: column;
+        align-items: flex-start;
+        margin-bottom: 32px;
+    }
+
+    /* Shop */
+    .shop-grid {
+        grid-template-columns: 1fr;
+        max-width: 400px;
+    }
+
+    /* Contact */
+    .contact-sub {
+        max-width: 100%;
+    }
+
+    /* Footer */
+    .footer-content {
+        flex-direction: column;
+        gap: 16px;
+        text-align: center;
+    }
+}
+
+/* ---- Small mobile ---- */
+@media (max-width: 480px) {
+    .hero-title {
+        font-size: clamp(3rem, 18vw, 5rem);
+    }
+
+    .section-heading {
+        font-size: clamp(2rem, 10vw, 3rem);
+    }
+
+    .about-stats {
+        flex-wrap: wrap;
+        gap: 24px;
+    }
+
+    .portfolio-filters {
+        gap: 6px;
+    }
+
+    .filter-btn {
+        padding: 7px 14px;
+        font-size: 0.65rem;
+    }
+}

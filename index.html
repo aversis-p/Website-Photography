@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luca Zwahlen – Photographer</title>
+    <meta name="description" content="Luca Zwahlen – Fotograf aus Graubünden, Schweiz. Landschaften, Events und Brand Photography.">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Roboto+Mono:wght@300;400&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+    <!-- Custom Cursor -->
+    <div class="cursor" id="cursor"></div>
+    <div class="cursor-dot" id="cursorDot"></div>
+
+    <!-- Loading Screen -->
+    <div class="loader" id="loader">
+        <div class="loader-text">LZ</div>
+        <div class="loader-bar"><div class="loader-progress"></div></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="nav" id="nav">
+        <div class="nav-logo">
+            <a href="#hero">LZ</a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#shop">Shop</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <div class="nav-instagram">
+            <a href="https://instagram.com/luca.photo.32" target="_blank" rel="noopener">@luca.photo.32</a>
+        </div>
+        <button class="nav-toggle" id="navToggle" aria-label="Menu">
+            <span></span><span></span>
+        </button>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <ul>
+            <li><a href="#about" class="mobile-link">About</a></li>
+            <li><a href="#portfolio" class="mobile-link">Portfolio</a></li>
+            <li><a href="#shop" class="mobile-link">Shop</a></li>
+            <li><a href="#contact" class="mobile-link">Contact</a></li>
+        </ul>
+        <a href="https://instagram.com/luca.photo.32" target="_blank" class="mobile-insta">@luca.photo.32</a>
+    </div>
+
+    <!-- ===================== HERO ===================== -->
+    <section class="hero" id="hero">
+        <div class="hero-bg" id="heroBg">
+            <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1920&q=85" alt="Alpine Landscape" />
+            <div class="hero-overlay"></div>
+        </div>
+        <div class="hero-content">
+            <div class="hero-label reveal-up">PHOTOGRAPHER &nbsp;·&nbsp; GRAUBÜNDEN &nbsp;·&nbsp; SWITZERLAND</div>
+            <h1 class="hero-title">
+                <span class="reveal-up delay-1">LUCA</span>
+                <span class="reveal-up delay-2">ZWAHLEN</span>
+            </h1>
+            <p class="hero-tagline reveal-up delay-3">Landscapes &nbsp;·&nbsp; Events &nbsp;·&nbsp; Brands</p>
+        </div>
+        <div class="hero-scroll-indicator">
+            <div class="scroll-line"></div>
+            <span>Scroll</span>
+        </div>
+        <div class="hero-number">001</div>
+    </section>
+
+    <!-- ===================== ABOUT ===================== -->
+    <section class="about" id="about">
+        <div class="section-label reveal-left">02 — About</div>
+        <div class="about-grid">
+            <div class="about-text">
+                <h2 class="section-heading reveal-up">The Eye Behind<br><span class="accent">the Lens</span></h2>
+                <div class="about-body reveal-up delay-1">
+                    <p>Ich bin Luca Zwahlen, Fotograf aus Graubünden, Schweiz. Meine Arbeit bewegt sich zwischen den extremen Landschaften der Alpen und der Energie von Events und Brands.</p>
+                    <p>Was mich antreibt: das perfekte Licht, der entscheidende Moment – und die Stille vor dem Bild. Ich fotografiere Landschaften, Events und arbeite zunehmend mit Brands und kommerziellen Projekten zusammen.</p>
+                </div>
+                <div class="about-stats reveal-up delay-2">
+                    <div class="stat">
+                        <span class="stat-number">GR</span>
+                        <span class="stat-label">Based in</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">CH</span>
+                        <span class="stat-label">Switzerland</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">∞</span>
+                        <span class="stat-label">Frames</span>
+                    </div>
+                </div>
+                <a href="https://instagram.com/luca.photo.32" target="_blank" rel="noopener" class="btn-outline reveal-up delay-3">
+                    Follow on Instagram
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+                </a>
+            </div>
+            <div class="about-image reveal-right">
+                <div class="about-img-wrap">
+                    <img src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?w=800&q=85" alt="Luca Zwahlen Photography" />
+                    <div class="about-img-accent"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== PORTFOLIO ===================== -->
+    <section class="portfolio" id="portfolio">
+        <div class="section-label reveal-left">03 — Portfolio</div>
+        <div class="portfolio-header">
+            <h2 class="section-heading reveal-up">Selected <span class="accent">Work</span></h2>
+            <div class="portfolio-filters reveal-up delay-1">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="landschaft">Landschaft</button>
+                <button class="filter-btn" data-filter="events">Events</button>
+                <button class="filter-btn" data-filter="brands">Brands</button>
+            </div>
+        </div>
+        <div class="portfolio-grid" id="portfolioGrid">
+
+            <div class="portfolio-item reveal-up" data-category="events">
+                <div class="portfolio-img-wrap">
+                    <img src="https://images.unsplash.com/photo-1551698618-1dfe5d97d256?w=800&q=80" alt="St. Moritz Ice" loading="lazy" />
+                    <div class="portfolio-overlay">
+                        <div class="portfolio-info">
+                            <span class="portfolio-cat">Events</span>
+                            <h3>St. Moritz Ice</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="portfolio-item portfolio-wide reveal-up delay-1" data-category="landschaft">
+                <div class="portfolio-img-wrap">
+                    <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1200&q=80" alt="Graubünden Winter" loading="lazy" />
+                    <div class="portfolio-overlay">
+                        <div class="portfolio-info">
+                            <span class="portfolio-cat">Landschaft</span>
+                            <h3>Graubünden Winter</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="portfolio-item portfolio-tall reveal-up delay-2" data-category="landschaft">
+                <div class="portfolio-img-wrap">
+                    <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=800&q=80" alt="Alpine Peak" loading="lazy" />
+                    <div class="portfolio-overlay">
+                        <div class="portfolio-info">
+                            <span class="portfolio-cat">Landschaft</span>
+                            <h3>Alpine Peak</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="portfolio-item reveal-up" data-category="landschaft">
+                <div class="portfolio-img-wrap">
+                    <img src="https://images.unsplash.com/photo-1483728642387-6c3bdd6c93e5?w=800&q=80" alt="Ice Caves" loading="lazy" />
+                    <div class="portfolio-overlay">
+                        <div class="portfolio-info">
+                            <span class="portfolio-cat">Landschaft</span>
+                            <h3>Ice Caves</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="portfolio-item reveal-up delay-1" data-category="brands">
+                <div class="portfolio-img-wrap">
+                    <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80" alt="Brand Campaign" loading="lazy" />
+                    <div class="portfolio-overlay">
+                        <div class="portfolio-info">
+                            <span class="portfolio-cat">Brands</span>
+                            <h3>Brand Campaign</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="portfolio-item reveal-up delay-2" data-category="events">
+                <div class="portfolio-img-wrap">
+                    <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&q=80" alt="Festival Night" loading="lazy" />
+                    <div class="portfolio-overlay">
+                        <div class="portfolio-info">
+                            <span class="portfolio-cat">Events</span>
+                            <h3>Festival Night</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="portfolio-item portfolio-wide reveal-up" data-category="landschaft">
+                <div class="portfolio-img-wrap">
+                    <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?w=1200&q=80" alt="Mountain Lake" loading="lazy" />
+                    <div class="portfolio-overlay">
+                        <div class="portfolio-info">
+                            <span class="portfolio-cat">Landschaft</span>
+                            <h3>Mountain Lake</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="portfolio-item reveal-up delay-1" data-category="brands">
+                <div class="portfolio-img-wrap">
+                    <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=800&q=80" alt="Commercial Shoot" loading="lazy" />
+                    <div class="portfolio-overlay">
+                        <div class="portfolio-info">
+                            <span class="portfolio-cat">Brands</span>
+                            <h3>Commercial Shoot</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="portfolio-cta reveal-up">
+            <a href="https://instagram.com/luca.photo.32" target="_blank" rel="noopener" class="btn-outline">
+                Mehr auf Instagram
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+            </a>
+        </div>
+    </section>
+
+    <!-- ===================== SHOP ===================== -->
+    <section class="shop" id="shop">
+        <div class="section-label reveal-left">04 — Shop</div>
+        <div class="shop-header">
+            <h2 class="section-heading reveal-up">Fine Art <span class="accent">Prints</span></h2>
+            <p class="shop-subtext reveal-up delay-1">Limitierte Drucke auf Museumsqualität. Jedes Bild handverlesen, signiert und nummeriert.</p>
+        </div>
+        <div class="shop-grid">
+
+            <div class="shop-item reveal-up">
+                <div class="shop-img-wrap">
+                    <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&q=80" alt="Alpine Dawn Print" loading="lazy" />
+                    <div class="shop-badge">Limited</div>
+                </div>
+                <div class="shop-info">
+                    <h3>Alpine Dawn</h3>
+                    <span class="shop-edition">Edition 1/10</span>
+                    <div class="shop-bottom">
+                        <span class="shop-price">CHF 150</span>
+                        <a href="#contact" class="btn-shop">Anfragen</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="shop-item reveal-up delay-1">
+                <div class="shop-img-wrap">
+                    <img src="https://images.unsplash.com/photo-1483728642387-6c3bdd6c93e5?w=600&q=80" alt="Ice Cave Blue Print" loading="lazy" />
+                    <div class="shop-badge">Limited</div>
+                </div>
+                <div class="shop-info">
+                    <h3>Ice Cave Blue</h3>
+                    <span class="shop-edition">Edition 1/5</span>
+                    <div class="shop-bottom">
+                        <span class="shop-price">CHF 180</span>
+                        <a href="#contact" class="btn-shop">Anfragen</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="shop-item reveal-up delay-2">
+                <div class="shop-img-wrap">
+                    <img src="https://images.unsplash.com/photo-1551698618-1dfe5d97d256?w=600&q=80" alt="Winter Silence Print" loading="lazy" />
+                    <div class="shop-badge">Limited</div>
+                </div>
+                <div class="shop-info">
+                    <h3>Winter Silence</h3>
+                    <span class="shop-edition">Edition 1/10</span>
+                    <div class="shop-bottom">
+                        <span class="shop-price">CHF 120</span>
+                        <a href="#contact" class="btn-shop">Anfragen</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="shop-item reveal-up delay-3">
+                <div class="shop-img-wrap">
+                    <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?w=600&q=80" alt="St. Moritz Night Print" loading="lazy" />
+                    <div class="shop-badge sold">Sold Out</div>
+                </div>
+                <div class="shop-info">
+                    <h3>St. Moritz Night</h3>
+                    <span class="shop-edition">Edition 1/3</span>
+                    <div class="shop-bottom">
+                        <span class="shop-price">CHF 200</span>
+                        <a href="#contact" class="btn-shop sold-out">Ausverkauft</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ===================== CONTACT ===================== -->
+    <section class="contact" id="contact">
+        <div class="section-label reveal-left">05 — Contact</div>
+        <div class="contact-grid">
+            <div class="contact-info">
+                <h2 class="section-heading reveal-up">Let's Work<br><span class="accent">Together</span></h2>
+                <p class="contact-sub reveal-up delay-1">Ob für ein Shooting, einen Print oder ein gemeinsames Brand-Projekt – ich freue mich von dir zu hören.</p>
+                <div class="contact-links reveal-up delay-2">
+                    <a href="https://instagram.com/luca.photo.32" target="_blank" rel="noopener" class="contact-link">
+                        <span class="contact-link-label">Instagram</span>
+                        <span class="contact-link-value">@luca.photo.32</span>
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+                    </a>
+                    <a href="mailto:hello@lucazwahlen.ch" class="contact-link">
+                        <span class="contact-link-label">Email</span>
+                        <span class="contact-link-value">hello@lucazwahlen.ch</span>
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+                    </a>
+                    <div class="contact-link no-hover">
+                        <span class="contact-link-label">Based in</span>
+                        <span class="contact-link-value">Graubünden, Switzerland</span>
+                    </div>
+                </div>
+            </div>
+            <form class="contact-form reveal-right" id="contactForm">
+                <div class="form-group">
+                    <input type="text" id="name" name="name" placeholder="Dein Name" required />
+                </div>
+                <div class="form-group">
+                    <input type="email" id="email" name="email" placeholder="Deine E-Mail" required />
+                </div>
+                <div class="form-group">
+                    <select id="subject" name="subject">
+                        <option value="" disabled selected>Art der Anfrage</option>
+                        <option value="shooting">Shooting buchen</option>
+                        <option value="print">Print anfragen</option>
+                        <option value="brand">Brand Projekt</option>
+                        <option value="other">Sonstiges</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <textarea id="message" name="message" placeholder="Deine Nachricht..." rows="5" required></textarea>
+                </div>
+                <button type="submit" class="btn-primary">
+                    Nachricht senden
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-logo">LZ</div>
+            <div class="footer-center">
+                <p>&copy; 2025 Luca Zwahlen. All rights reserved.</p>
+            </div>
+            <div class="footer-right">
+                <a href="https://instagram.com/luca.photo.32" target="_blank" rel="noopener">Instagram</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/animations.js"></script>
+    <script src="js/shop.js"></script>
+    <script src="js/main.js"></script>
+
+</body>
+</html>

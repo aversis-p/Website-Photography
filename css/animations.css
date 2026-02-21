@@ -1,0 +1,78 @@
+/* ========================================
+   animations.css – Scroll Reveal & Effects
+   ======================================== */
+
+/* ---- Reveal base states ---- */
+.reveal-up {
+    opacity: 0;
+    transform: translateY(44px);
+    transition: opacity 0.85s cubic-bezier(0.25, 1, 0.5, 1),
+                transform 0.85s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.reveal-left {
+    opacity: 0;
+    transform: translateX(-44px);
+    transition: opacity 0.85s cubic-bezier(0.25, 1, 0.5, 1),
+                transform 0.85s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.reveal-right {
+    opacity: 0;
+    transform: translateX(44px);
+    transition: opacity 0.85s cubic-bezier(0.25, 1, 0.5, 1),
+                transform 0.85s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* ---- Visible state ---- */
+.reveal-up.visible,
+.reveal-left.visible,
+.reveal-right.visible {
+    opacity: 1;
+    transform: translate(0, 0);
+}
+
+/* ---- Delay variants ---- */
+.delay-1 { transition-delay: 0.12s; }
+.delay-2 { transition-delay: 0.24s; }
+.delay-3 { transition-delay: 0.36s; }
+.delay-4 { transition-delay: 0.48s; }
+
+/* ---- Portfolio item transition for filter ---- */
+.portfolio-item {
+    transition: opacity 0.35s ease, transform 0.35s ease;
+}
+
+/* ---- Blue shimmer on portfolio hover ---- */
+.portfolio-img-wrap::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        135deg,
+        transparent 30%,
+        rgba(74, 143, 255, 0.05) 50%,
+        transparent 70%
+    );
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    pointer-events: none;
+}
+
+.portfolio-item:hover .portfolio-img-wrap::after { opacity: 1; }
+
+/* ---- Accent glow animation ---- */
+@keyframes accentGlow {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(74, 143, 255, 0); }
+    50%       { box-shadow: 0 0 30px 6px rgba(74, 143, 255, 0.18); }
+}
+
+/* ---- Page entry fade ---- */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+body {
+    animation: fadeIn 0.4s ease forwards;
+}
