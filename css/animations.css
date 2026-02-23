@@ -2,7 +2,7 @@
    animations.css – Scroll Reveal & Effects
    ======================================== */
 
-/* ---- Reveal base states ---- */
+/* ---- Legacy reveal (hero uses these + .visible trigger) ---- */
 .reveal-up {
     opacity: 0;
     transform: translateY(44px);
@@ -24,12 +24,43 @@
                 transform 0.85s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
-/* ---- Visible state ---- */
 .reveal-up.visible,
 .reveal-left.visible,
 .reveal-right.visible {
     opacity: 1;
     transform: translate(0, 0);
+}
+
+/* ---- New stronger reveal for non-hero sections ---- */
+.reveal {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 1s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+                transform 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ---- Stagger container ---- */
+.reveal-stagger > * {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.reveal-stagger.visible > *:nth-child(1) { transition-delay: 0s; }
+.reveal-stagger.visible > *:nth-child(2) { transition-delay: 0.15s; }
+.reveal-stagger.visible > *:nth-child(3) { transition-delay: 0.3s; }
+.reveal-stagger.visible > *:nth-child(4) { transition-delay: 0.45s; }
+.reveal-stagger.visible > *:nth-child(5) { transition-delay: 0.6s; }
+.reveal-stagger.visible > *:nth-child(6) { transition-delay: 0.75s; }
+
+.reveal-stagger.visible > * {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 /* ---- Delay variants ---- */
@@ -38,33 +69,52 @@
 .delay-3 { transition-delay: 0.36s; }
 .delay-4 { transition-delay: 0.48s; }
 
-/* ---- Portfolio item transition for filter ---- */
-.portfolio-item {
-    transition: opacity 0.35s ease, transform 0.35s ease;
+/* ---- Floating Glow Orbs ---- */
+@keyframes float {
+    0%, 100% { transform: translateY(0) translateX(0); }
+    50%       { transform: translateY(-30px) translateX(20px); }
 }
 
-/* ---- Blue shimmer on portfolio hover ---- */
-.portfolio-img-wrap::after {
-    content: '';
+.glow-orb {
     position: absolute;
-    inset: 0;
-    background: linear-gradient(
-        135deg,
-        transparent 30%,
-        rgba(74, 143, 255, 0.05) 50%,
-        transparent 70%
-    );
-    opacity: 0;
-    transition: opacity 0.4s ease;
+    border-radius: 50%;
+    filter: blur(80px);
+    opacity: 0.2;
     pointer-events: none;
+    animation: float 8s ease-in-out infinite;
+    z-index: 0;
 }
 
-.portfolio-item:hover .portfolio-img-wrap::after { opacity: 1; }
+.orb-blue {
+    background: var(--accent);
+    width: 400px;
+    height: 400px;
+}
 
-/* ---- Accent glow animation ---- */
-@keyframes accentGlow {
-    0%, 100% { box-shadow: 0 0 0 0 rgba(74, 143, 255, 0); }
-    50%       { box-shadow: 0 0 30px 6px rgba(74, 143, 255, 0.18); }
+.orb-orange {
+    background: var(--orange);
+    width: 300px;
+    height: 300px;
+    animation-delay: -4s;
+}
+
+/* ---- Portfolio item transitions ---- */
+.portfolio-item {
+    transition: opacity 0.35s ease, transform 0.5s ease, box-shadow 0.5s ease;
+    border-radius: 8px;
+}
+
+.portfolio-item:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 20px 60px var(--accent-glow);
+}
+
+.portfolio-img-wrap img {
+    transition: transform 0.8s ease;
+}
+
+.portfolio-item:hover .portfolio-img-wrap img {
+    transform: scale(1.1);
 }
 
 /* ---- Page entry fade ---- */
@@ -75,4 +125,10 @@
 
 body {
     animation: fadeIn 0.4s ease forwards;
+}
+
+/* ---- Mobile: hide large orbs to prevent overflow ---- */
+@media (max-width: 768px) {
+    .orb-blue  { width: 200px; height: 200px; opacity: 0.15; }
+    .orb-orange { width: 150px; height: 150px; opacity: 0.12; }
 }
