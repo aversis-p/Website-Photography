@@ -11,6 +11,11 @@
     .portfolio-grid {
         grid-auto-rows: 280px;
     }
+
+    .footer-top {
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 40px;
+    }
 }
 
 /* ---- Tablets ---- */
@@ -39,6 +44,23 @@
     .contact-grid {
         grid-template-columns: 1fr;
         gap: 60px;
+    }
+
+    .services-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .footer-top {
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+    }
+
+    .footer-col--brand {
+        grid-column: span 2;
+        order: -1;
+        border-bottom: 1px solid var(--border);
+        padding-bottom: 40px;
+        margin-bottom: 8px;
     }
 }
 
@@ -80,6 +102,16 @@
         gap: 28px;
     }
 
+    /* Services */
+    .services-grid {
+        grid-template-columns: 1fr;
+        gap: 2px;
+    }
+
+    .service-item {
+        padding: 40px 32px;
+    }
+
     /* Portfolio */
     .portfolio-grid {
         grid-template-columns: 1fr;
@@ -106,10 +138,36 @@
     }
 
     /* Footer */
-    .footer-content {
+    .footer-top {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        padding: 60px var(--pad) 40px;
+    }
+
+    .footer-col--brand {
+        order: -1;
+        grid-column: auto;
+        border-bottom: 1px solid var(--border);
+        padding-bottom: 40px;
+    }
+
+    .footer-col--right {
+        text-align: left;
+    }
+
+    .footer-col--right ul {
+        align-items: flex-start;
+    }
+
+    .footer-bottom {
         flex-direction: column;
-        gap: 16px;
+        gap: 12px;
         text-align: center;
+    }
+
+    /* Modal */
+    .modal-inner {
+        width: 96%;
     }
 }
 
@@ -120,7 +178,7 @@
     }
 
     .section-heading {
-        font-size: clamp(2rem, 10vw, 3rem);
+        font-size: clamp(2.2rem, 10vw, 3.5rem);
     }
 
     .about-stats {
@@ -135,5 +193,9 @@
     .filter-btn {
         padding: 7px 14px;
         font-size: 0.65rem;
+    }
+
+    .service-item {
+        padding: 32px 24px;
     }
 }

@@ -71,6 +71,45 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     // ===========================
+    // PORTFOLIO MODAL
+    // ===========================
+    const portfolioModal   = document.getElementById('portfolioModal');
+    const modalBackdrop    = document.getElementById('modalBackdrop');
+    const modalClose       = document.getElementById('modalClose');
+    const modalImg         = document.getElementById('modalImg');
+    const modalCat         = document.getElementById('modalCat');
+    const modalTitle       = document.getElementById('modalTitle');
+
+    function openModal(item) {
+        const img   = item.querySelector('.portfolio-img-wrap img');
+        const cat   = item.querySelector('.portfolio-cat');
+        const title = item.querySelector('.portfolio-info h3');
+        modalImg.src        = img.src;
+        modalImg.alt        = img.alt;
+        modalCat.textContent   = cat ? cat.textContent : '';
+        modalTitle.textContent = title ? title.textContent : '';
+        portfolioModal.classList.add('open');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal() {
+        portfolioModal.classList.remove('open');
+        document.body.style.overflow = '';
+    }
+
+    document.querySelectorAll('.portfolio-item').forEach(item => {
+        item.addEventListener('click', () => openModal(item));
+    });
+
+    if (modalClose)    modalClose.addEventListener('click', closeModal);
+    if (modalBackdrop) modalBackdrop.addEventListener('click', closeModal);
+
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') closeModal();
+    });
+
+
+    // ===========================
     // CONTACT FORM
     // ===========================
     const form = document.getElementById('contactForm');
