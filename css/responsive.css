@@ -8,10 +8,6 @@
         grid-template-columns: repeat(2, 1fr);
     }
 
-    .portfolio-grid {
-        grid-auto-rows: 280px;
-    }
-
     .footer-top {
         grid-template-columns: 1fr 1fr 1fr;
         gap: 40px;
@@ -28,18 +24,6 @@
     .about-image {
         max-width: 480px;
     }
-
-    .about-img-accent {
-        display: none;
-    }
-
-    .portfolio-grid {
-        grid-template-columns: repeat(2, 1fr);
-        grid-auto-rows: 260px;
-    }
-
-    .portfolio-wide { grid-column: span 2; }
-    .portfolio-tall { grid-row: span 1; }
 
     .contact-grid {
         grid-template-columns: 1fr;
@@ -74,10 +58,18 @@
         padding: 90px var(--pad);
     }
 
-    /* Nav */
-    .nav-links,
-    .nav-instagram {
+    /* Nav – hide left links and contact, show toggle */
+    .nav-left,
+    .nav-contact {
         display: none;
+    }
+
+    .nav {
+        grid-template-columns: auto 1fr auto;
+    }
+
+    .nav-center {
+        justify-content: center;
     }
 
     .nav-toggle {
@@ -98,8 +90,8 @@
     }
 
     /* About */
-    .about-stats {
-        gap: 28px;
+    .about-body p {
+        font-size: 1.05rem;
     }
 
     /* Services */
@@ -115,10 +107,7 @@
     /* Portfolio */
     .portfolio-grid {
         grid-template-columns: 1fr;
-        grid-auto-rows: 280px;
     }
-
-    .portfolio-wide { grid-column: span 1; }
 
     .portfolio-header {
         flex-direction: column;
@@ -178,12 +167,7 @@
     }
 
     .section-heading {
-        font-size: clamp(2.2rem, 10vw, 3.5rem);
-    }
-
-    .about-stats {
-        flex-wrap: wrap;
-        gap: 24px;
+        font-size: clamp(2rem, 10vw, 3rem);
     }
 
     .portfolio-filters {

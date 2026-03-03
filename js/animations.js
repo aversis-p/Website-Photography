@@ -5,15 +5,14 @@
 document.addEventListener('DOMContentLoaded', () => {
 
     // ===========================
-    // SCROLL REVEAL
+    // SCROLL REVEAL – HERO ONLY (.visible trigger)
     // ===========================
-    const revealEls = document.querySelectorAll('.reveal-up, .reveal-left, .reveal-right, .reveal, .reveal-stagger');
+    const revealEls = document.querySelectorAll('.reveal-up, .reveal-left, .reveal-right');
 
     const revealObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('visible');
-                // Unobserve after first reveal for performance
                 revealObserver.unobserve(entry.target);
             }
         });
@@ -54,5 +53,25 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }, { passive: true });
     }
+
+
+    // ===========================
+    // SCROLL REVEAL – NON-HERO (.active trigger)
+    // ===========================
+    const activeEls = document.querySelectorAll('.reveal, .reveal-stagger');
+
+    const activeObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('active');
+                activeObserver.unobserve(entry.target);
+            }
+        });
+    }, {
+        threshold: 0.1,
+        rootMargin: '0px 0px -60px 0px'
+    });
+
+    activeEls.forEach(el => activeObserver.observe(el));
 
 });

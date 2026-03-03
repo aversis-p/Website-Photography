@@ -31,90 +31,48 @@
     transform: translate(0, 0);
 }
 
-/* ---- New stronger reveal for non-hero sections ---- */
+/* ---- Non-hero reveal (.active trigger) ---- */
 .reveal {
     opacity: 0;
-    transform: translateY(50px);
-    transition: opacity 1s cubic-bezier(0.25, 0.46, 0.45, 0.94),
-                transform 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    transform: translateY(30px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
 }
 
-.reveal.visible {
+.reveal.active {
     opacity: 1;
     transform: translateY(0);
 }
 
-/* ---- Stagger container ---- */
+/* ---- Stagger container (.active trigger) ---- */
 .reveal-stagger > * {
     opacity: 0;
-    transform: translateY(40px);
-    transition: opacity 0.8s ease, transform 0.8s ease;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
 }
 
-.reveal-stagger.visible > *:nth-child(1) { transition-delay: 0s; }
-.reveal-stagger.visible > *:nth-child(2) { transition-delay: 0.15s; }
-.reveal-stagger.visible > *:nth-child(3) { transition-delay: 0.3s; }
-.reveal-stagger.visible > *:nth-child(4) { transition-delay: 0.45s; }
-.reveal-stagger.visible > *:nth-child(5) { transition-delay: 0.6s; }
-.reveal-stagger.visible > *:nth-child(6) { transition-delay: 0.75s; }
+.reveal-stagger.active > *:nth-child(1) { transition-delay: 0s; }
+.reveal-stagger.active > *:nth-child(2) { transition-delay: 0.1s; }
+.reveal-stagger.active > *:nth-child(3) { transition-delay: 0.2s; }
+.reveal-stagger.active > *:nth-child(4) { transition-delay: 0.3s; }
 
-.reveal-stagger.visible > * {
+.reveal-stagger.active > * {
     opacity: 1;
     transform: translateY(0);
 }
 
 /* ---- Delay variants ---- */
-.delay-1 { transition-delay: 0.12s; }
-.delay-2 { transition-delay: 0.24s; }
-.delay-3 { transition-delay: 0.36s; }
-.delay-4 { transition-delay: 0.48s; }
-
-/* ---- Floating Glow Orbs ---- */
-@keyframes float {
-    0%, 100% { transform: translateY(0) translateX(0); }
-    50%       { transform: translateY(-30px) translateX(20px); }
-}
-
-.glow-orb {
-    position: absolute;
-    border-radius: 50%;
-    filter: blur(80px);
-    opacity: 0.2;
-    pointer-events: none;
-    animation: float 8s ease-in-out infinite;
-    z-index: 0;
-}
-
-.orb-blue {
-    background: var(--accent);
-    width: 400px;
-    height: 400px;
-}
-
-.orb-orange {
-    background: var(--orange);
-    width: 300px;
-    height: 300px;
-    animation-delay: -4s;
-}
+.delay-1 { transition-delay: 0.1s; }
+.delay-2 { transition-delay: 0.2s; }
+.delay-3 { transition-delay: 0.3s; }
+.delay-4 { transition-delay: 0.4s; }
 
 /* ---- Portfolio item transitions ---- */
 .portfolio-item {
-    transition: opacity 0.35s ease, transform 0.5s ease, box-shadow 0.5s ease;
-    border-radius: 8px;
+    transition: opacity 0.3s ease;
 }
 
 .portfolio-item:hover {
-    transform: translateY(-10px) scale(1.02);
-    box-shadow: 0 20px 60px var(--accent-glow);
-}
-
-.portfolio-img-wrap img {
-    transition: transform 0.8s ease;
-}
-
-.portfolio-item:hover .portfolio-img-wrap img {
-    transform: scale(1.1);
+    opacity: 1; /* handled per child element in layout.css */
 }
 
 /* ---- Page entry fade ---- */
@@ -125,10 +83,4 @@
 
 body {
     animation: fadeIn 0.4s ease forwards;
-}
-
-/* ---- Mobile: hide large orbs to prevent overflow ---- */
-@media (max-width: 768px) {
-    .orb-blue  { width: 200px; height: 200px; opacity: 0.15; }
-    .orb-orange { width: 150px; height: 150px; opacity: 0.12; }
 }
