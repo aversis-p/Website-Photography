@@ -347,6 +347,22 @@
     align-items: center;
     justify-content: center;
     overflow: hidden;
+    margin-top: -120px;
+    position: relative;
+    z-index: 2;
+}
+
+/* Fade-in from black at top */
+.about-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 250px;
+    background: linear-gradient(to bottom, #000000 0%, transparent 100%);
+    pointer-events: none;
+    z-index: 4;
 }
 
 .about-hero-bg {
@@ -366,6 +382,19 @@
     position: absolute;
     inset: 0;
     background: rgba(0, 0, 0, 0.35);
+}
+
+/* Fade-out to black at bottom */
+.about-hero::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 200px;
+    background: linear-gradient(to bottom, transparent 0%, #000000 100%);
+    pointer-events: none;
+    z-index: 4;
 }
 
 .about-hero-grain {
