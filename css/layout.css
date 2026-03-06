@@ -326,6 +326,7 @@
     justify-content: center;
     text-align: center;
     padding: 0 var(--pad);
+    will-change: transform, opacity;
 }
 
 /* Shared label styles for bg-layer and hero-card */
