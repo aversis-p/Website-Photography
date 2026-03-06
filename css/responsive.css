@@ -89,12 +89,12 @@
         display: none;
     }
 
-    /* About Hero */
-    .about-hero {
+    /* Background Layer */
+    .bg-layer {
         min-height: 500px;
     }
 
-    .about-hero-name {
+    .bg-layer-name {
         font-size: clamp(4rem, 18vw, 6rem);
     }
 

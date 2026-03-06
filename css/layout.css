@@ -197,15 +197,136 @@
 }
 
 /* ===========================
-   HERO
+   HERO WRAPPER (contains both layers)
    =========================== */
-.hero {
+.hero-wrapper {
+    position: relative;
+    height: 200vh;
+    /* Two viewports: hero card scrolls over bg layer */
+}
+
+/* ===========================
+   BACKGROUND LAYER (Snow photo – sits behind)
+   =========================== */
+.bg-layer {
+    position: sticky;
+    top: 0;
     height: 100vh;
     min-height: 620px;
-    padding: 0 var(--pad) 100px;
+    padding: 0;
     display: flex;
-    align-items: flex-end;
+    align-items: center;
     justify-content: center;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.bg-layer-img {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+}
+
+.bg-layer-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 30%;
+}
+
+.bg-layer-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.35);
+}
+
+.bg-layer-content {
+    position: relative;
+    z-index: 3;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+}
+
+.bg-layer-label {
+    font-family: var(--font-mono);
+    font-size: 1rem;
+    font-weight: 400;
+    color: #ffffff;
+    letter-spacing: 0.05em;
+    margin-bottom: 8px;
+}
+
+.bg-layer-name {
+    font-family: 'Fjalla One', sans-serif;
+    font-size: clamp(5rem, 14vw, 10rem);
+    font-weight: 400;
+    letter-spacing: 0.05em;
+    line-height: 1;
+    color: #ffffff;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+}
+
+.bg-layer-age {
+    font-family: var(--font-primary);
+    font-size: clamp(1.4rem, 3vw, 2rem);
+    font-weight: 300;
+    color: #ffffff;
+    letter-spacing: 0.05em;
+}
+
+.bg-layer-scroll {
+    position: absolute;
+    bottom: 48px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+}
+
+.bg-layer-scroll-arrow {
+    animation: bgScrollBounce 2s ease-in-out infinite;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+@keyframes bgScrollBounce {
+    0%, 100% { transform: translateY(0); opacity: 0.6; }
+    50%      { transform: translateY(8px); opacity: 1; }
+}
+
+.bg-layer-scroll-text {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.08em;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+/* ===========================
+   HERO CARD (Fjord photo – floats above, becomes card)
+   =========================== */
+.hero-card {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    min-height: 620px;
+    padding: 0;
+    z-index: 10;
+    overflow: visible;
+}
+
+.hero-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    will-change: transform, border-radius, box-shadow;
+    transition: none;
 }
 
 .hero-bg {
@@ -229,15 +350,18 @@
         rgba(6, 8, 16, 0.15) 0%,
         rgba(6, 8, 16, 0.05) 25%,
         rgba(6, 8, 16, 0.55) 70%,
-        rgba(6, 8, 16, 1.0)  100%
+        rgba(6, 8, 16, 0.85) 100%
     );
 }
 
 .hero-content {
-    position: relative;
+    position: absolute;
+    bottom: 100px;
+    left: 0;
+    right: 0;
     z-index: 2;
     text-align: center;
-    width: 100%;
+    padding: 0 var(--pad);
 }
 
 .hero-label {
@@ -334,146 +458,6 @@
     letter-spacing: 0.22em;
     color: rgba(255,255,255,0.07);
     z-index: 1;
-}
-
-/* ===========================
-   ABOUT — HERO (Outline style)
-   =========================== */
-.about-hero {
-    height: 100vh;
-    min-height: 620px;
-    padding: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-    margin-top: -120px;
-    position: relative;
-    z-index: 2;
-}
-
-/* Fade-in from black at top */
-.about-hero::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 250px;
-    background: linear-gradient(to bottom, #000000 0%, transparent 100%);
-    pointer-events: none;
-    z-index: 4;
-}
-
-.about-hero-bg {
-    position: absolute;
-    inset: 0;
-    overflow: hidden;
-}
-
-.about-hero-bg img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center 30%;
-}
-
-.about-hero-overlay {
-    position: absolute;
-    inset: 0;
-    background: rgba(0, 0, 0, 0.35);
-}
-
-/* Fade-out to black at bottom */
-.about-hero::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 200px;
-    background: linear-gradient(to bottom, transparent 0%, #000000 100%);
-    pointer-events: none;
-    z-index: 4;
-}
-
-.about-hero-grain {
-    position: absolute;
-    inset: 0;
-    z-index: 2;
-    pointer-events: none;
-    opacity: 0.03;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
-    background-repeat: repeat;
-    background-size: 180px 180px;
-}
-
-.about-hero-content {
-    position: relative;
-    z-index: 3;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0;
-}
-
-.about-hero-label {
-    font-family: var(--font-mono);
-    font-size: 1rem;
-    font-weight: 400;
-    color: #ffffff;
-    letter-spacing: 0.05em;
-    margin-bottom: 8px;
-}
-
-.about-hero-name {
-    font-family: 'Fjalla One', sans-serif;
-    font-size: clamp(5rem, 14vw, 10rem);
-    font-weight: 400;
-    letter-spacing: 0.05em;
-    line-height: 1;
-    color: #ffffff;
-    text-transform: uppercase;
-    margin-bottom: 8px;
-}
-
-.about-hero-age {
-    font-family: var(--font-primary);
-    font-size: clamp(1.4rem, 3vw, 2rem);
-    font-weight: 300;
-    color: #ffffff;
-    letter-spacing: 0.05em;
-}
-
-/* Scroll indicator */
-.about-hero-scroll {
-    position: absolute;
-    bottom: 48px;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 3;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 12px;
-}
-
-.about-scroll-arrow {
-    animation: aboutScrollBounce 2s ease-in-out infinite;
-    color: rgba(255, 255, 255, 0.6);
-}
-
-@keyframes aboutScrollBounce {
-    0%, 100% { transform: translateY(0); opacity: 0.6; }
-    50%      { transform: translateY(8px); opacity: 1; }
-}
-
-.about-scroll-text {
-    font-family: var(--font-mono);
-    font-size: 0.7rem;
-    letter-spacing: 0.08em;
-    color: rgba(255, 255, 255, 0.5);
 }
 
 /* ===========================

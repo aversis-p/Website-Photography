@@ -61,47 +61,52 @@
         <a href="https://instagram.com/luca.photo.32" target="_blank" class="mobile-insta">@luca.photo.32</a>
     </div>
 
-    <!-- ===================== HERO ===================== -->
-    <!-- HERO STAYS UNCHANGED -->
-    <section class="hero" id="hero">
-        <div class="hero-bg" id="heroBg">
-            <img src="images/hero.jpg" alt="Alpine Landscape – Luca Zwahlen Photography" />
-            <div class="hero-overlay"></div>
-            <div class="hero-grain" aria-hidden="true"></div>
-        </div>
-        <div class="hero-content">
-            <div class="hero-label reveal-up">PHOTOGRAPHER &nbsp;·&nbsp; GRAUBÜNDEN &nbsp;·&nbsp; SWITZERLAND</div>
-            <h1 class="hero-title reveal-up delay-1">LUCA ZWAHLEN</h1>
-            <p class="hero-tagline reveal-up delay-3">Landscapes &nbsp;·&nbsp; Events &nbsp;·&nbsp; Brands</p>
-        </div>
-        <div class="hero-scroll-indicator">
-            <div class="scroll-line"></div>
-            <span>Scroll</span>
-        </div>
-        <div class="hero-number">001</div>
-    </section>
+    <!-- ===================== HERO WRAPPER ===================== -->
+    <div class="hero-wrapper" id="heroWrapper">
 
-    <!-- ===================== ABOUT — HERO ===================== -->
-    <section class="about-hero" id="about">
-        <div class="about-hero-bg">
-            <img src="images/about-hero.jpg" alt="Luca im Schnee mit Stativ" />
-            <div class="about-hero-overlay"></div>
-            <div class="about-hero-grain" aria-hidden="true"></div>
-        </div>
-        <div class="about-hero-content">
-            <span class="about-hero-label reveal">Me:</span>
-            <h2 class="about-hero-name reveal delay-1">LUCA</h2>
-            <span class="about-hero-age reveal delay-2">16 YO</span>
-        </div>
-        <div class="about-hero-scroll">
-            <div class="about-scroll-arrow reveal delay-3">
-                <svg width="16" height="24" viewBox="0 0 16 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M8 0v22M1 15l7 7 7-7"/>
-                </svg>
+        <!-- Background Layer: Snow/Stativ photo (sits behind hero card) -->
+        <section class="bg-layer" id="about">
+            <div class="bg-layer-img">
+                <img src="images/about-hero.jpg" alt="Luca im Schnee mit Stativ" />
+                <div class="bg-layer-overlay"></div>
             </div>
-            <span class="about-scroll-text reveal delay-4">I have fun with it...</span>
-        </div>
-    </section>
+            <div class="bg-layer-content">
+                <span class="bg-layer-label reveal">Me:</span>
+                <h2 class="bg-layer-name reveal delay-1">LUCA</h2>
+                <span class="bg-layer-age reveal delay-2">16 YO</span>
+            </div>
+            <div class="bg-layer-scroll">
+                <div class="bg-layer-scroll-arrow reveal delay-3">
+                    <svg width="16" height="24" viewBox="0 0 16 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M8 0v22M1 15l7 7 7-7"/>
+                    </svg>
+                </div>
+                <span class="bg-layer-scroll-text reveal delay-4">I have fun with it...</span>
+            </div>
+        </section>
+
+        <!-- Hero Card: Fjord/Ice photo (floats above, becomes card on scroll) -->
+        <section class="hero-card" id="heroCard">
+            <div class="hero-card-inner" id="heroCardInner">
+                <div class="hero-bg" id="heroBg">
+                    <img src="images/hero.jpg" alt="Alpine Landscape – Luca Zwahlen Photography" />
+                    <div class="hero-overlay"></div>
+                    <div class="hero-grain" aria-hidden="true"></div>
+                </div>
+                <div class="hero-content">
+                    <div class="hero-label reveal-up">PHOTOGRAPHER &nbsp;·&nbsp; GRAUBÜNDEN &nbsp;·&nbsp; SWITZERLAND</div>
+                    <h1 class="hero-title reveal-up delay-1">LUCA ZWAHLEN</h1>
+                    <p class="hero-tagline reveal-up delay-3">Landscapes &nbsp;·&nbsp; Events &nbsp;·&nbsp; Brands</p>
+                </div>
+                <div class="hero-scroll-indicator">
+                    <div class="scroll-line"></div>
+                    <span>Scroll</span>
+                </div>
+                <div class="hero-number">001</div>
+            </div>
+        </section>
+
+    </div>
 
     <!-- ===================== ABOUT — TEXT ===================== -->
     <section class="about-text-section">
