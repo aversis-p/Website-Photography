@@ -16,12 +16,12 @@
 
 /* ---- Tablets ---- */
 @media (max-width: 1024px) {
-    .about-grid {
+    .about-text-inner {
         grid-template-columns: 1fr;
         gap: 60px;
     }
 
-    .about-image {
+    .about-text-image {
         max-width: 480px;
     }
 
@@ -87,6 +87,19 @@
 
     .hero-number {
         display: none;
+    }
+
+    /* About Hero */
+    .about-hero {
+        min-height: 500px;
+    }
+
+    .about-hero-name {
+        font-size: clamp(4rem, 18vw, 6rem);
+    }
+
+    .about-text-section {
+        padding: 80px var(--pad);
     }
 
     /* About */
