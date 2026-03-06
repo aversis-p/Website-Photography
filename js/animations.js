@@ -61,15 +61,15 @@ document.addEventListener('DOMContentLoaded', () => {
             heroCardInner.style.transform = `scale(${scale})`;
             heroCardInner.style.boxShadow = `0 ${shadowY}px ${shadowBlur}px rgba(0,0,0,${shadowOpacity})`;
 
-            // Fade out hero content as it scrolls
+            // Fade out hero card content as it scrolls
             const heroContent = heroCard.querySelector('.hero-content');
             const heroScroll = heroCard.querySelector('.hero-scroll-indicator');
-            const heroNumber = heroCard.querySelector('.hero-number');
-            const contentOpacity = 1 - progress * 2; // fades out by 50% scroll
+            const heroBottom = heroCard.querySelector('.hero-card-bottom-text');
+            const contentOpacity = 1 - progress * 2.5; // fades out by ~40% scroll
 
             if (heroContent) heroContent.style.opacity = Math.max(0, contentOpacity);
             if (heroScroll) heroScroll.style.opacity = Math.max(0, contentOpacity);
-            if (heroNumber) heroNumber.style.opacity = Math.max(0, contentOpacity);
+            if (heroBottom) heroBottom.style.opacity = Math.max(0, contentOpacity);
 
             ticking = false;
         };

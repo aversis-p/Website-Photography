@@ -237,74 +237,42 @@
 .bg-layer-overlay {
     position: absolute;
     inset: 0;
-    background: rgba(0, 0, 0, 0.35);
+    background: rgba(0, 0, 0, 0.3);
 }
 
 .bg-layer-content {
-    position: relative;
+    position: absolute;
+    bottom: 100px;
+    left: 0;
+    right: 0;
     z-index: 3;
     text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0;
-}
-
-.bg-layer-label {
-    font-family: var(--font-mono);
-    font-size: 1rem;
-    font-weight: 400;
-    color: #ffffff;
-    letter-spacing: 0.05em;
-    margin-bottom: 8px;
+    padding: 0 var(--pad);
 }
 
 .bg-layer-name {
     font-family: 'Fjalla One', sans-serif;
-    font-size: clamp(5rem, 14vw, 10rem);
+    font-size: clamp(3rem, 10vw, 11rem);
     font-weight: 400;
     letter-spacing: 0.05em;
     line-height: 1;
     color: #ffffff;
     text-transform: uppercase;
-    margin-bottom: 8px;
-}
-
-.bg-layer-age {
-    font-family: var(--font-primary);
-    font-size: clamp(1.4rem, 3vw, 2rem);
-    font-weight: 300;
-    color: #ffffff;
-    letter-spacing: 0.05em;
-}
-
-.bg-layer-scroll {
-    position: absolute;
-    bottom: 48px;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 3;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 12px;
-}
-
-.bg-layer-scroll-arrow {
-    animation: bgScrollBounce 2s ease-in-out infinite;
-    color: rgba(255, 255, 255, 0.6);
-}
-
-@keyframes bgScrollBounce {
-    0%, 100% { transform: translateY(0); opacity: 0.6; }
-    50%      { transform: translateY(8px); opacity: 1; }
-}
-
-.bg-layer-scroll-text {
-    font-family: var(--font-mono);
-    font-size: 0.7rem;
-    letter-spacing: 0.08em;
-    color: rgba(255, 255, 255, 0.5);
+    margin-bottom: 28px;
+    -webkit-mask-image: linear-gradient(
+        to right,
+        transparent 0%,
+        black 18%,
+        black 82%,
+        transparent 100%
+    );
+    mask-image: linear-gradient(
+        to right,
+        transparent 0%,
+        black 18%,
+        black 82%,
+        transparent 100%
+    );
 }
 
 /* ===========================
@@ -337,33 +305,30 @@
 
 .hero-bg img {
     width: 100%;
-    height: 115%;
+    height: 100%;
     object-fit: cover;
-    object-position: center top;
+    object-position: center 30%;
 }
 
 .hero-overlay {
     position: absolute;
     inset: 0;
-    background: linear-gradient(
-        180deg,
-        rgba(6, 8, 16, 0.15) 0%,
-        rgba(6, 8, 16, 0.05) 25%,
-        rgba(6, 8, 16, 0.55) 70%,
-        rgba(6, 8, 16, 0.85) 100%
-    );
+    background: rgba(0, 0, 0, 0.3);
 }
 
 .hero-content {
     position: absolute;
-    bottom: 100px;
-    left: 0;
-    right: 0;
+    inset: 0;
     z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     text-align: center;
     padding: 0 var(--pad);
 }
 
+/* Shared label styles for bg-layer and hero-card */
 .hero-label {
     font-family: var(--font-mono);
     font-size: 0.66rem;
@@ -373,35 +338,53 @@
     margin-bottom: 20px;
 }
 
-.hero-title {
-    font-family: 'Fjalla One', sans-serif;
-    font-size: clamp(3rem, 10vw, 11rem);
-    font-weight: 400;
-    letter-spacing: 0.05em;
-    line-height: 1;
-    margin-bottom: 28px;
-    -webkit-mask-image: linear-gradient(
-        to right,
-        transparent 0%,
-        black 18%,
-        black 82%,
-        transparent 100%
-    );
-    mask-image: linear-gradient(
-        to right,
-        transparent 0%,
-        black 18%,
-        black 82%,
-        transparent 100%
-    );
-}
-
 .hero-tagline {
     font-family: var(--font-mono);
     font-size: 0.8rem;
     letter-spacing: 0.22em;
     text-transform: uppercase;
     color: var(--accent);
+}
+
+/* Hero card specific content (Me: / LUCA / 16 YO) */
+.about-card-label {
+    font-family: var(--font-mono);
+    font-size: 1rem;
+    font-weight: 400;
+    color: #ffffff;
+    letter-spacing: 0.05em;
+    margin-bottom: 8px;
+}
+
+.hero-title {
+    font-family: 'Fjalla One', sans-serif;
+    font-size: clamp(5rem, 14vw, 10rem);
+    font-weight: 400;
+    letter-spacing: 0.05em;
+    line-height: 1;
+    color: #ffffff;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+}
+
+.about-card-age {
+    font-family: var(--font-primary);
+    font-size: clamp(1.4rem, 3vw, 2rem);
+    font-weight: 300;
+    color: #ffffff;
+    letter-spacing: 0.05em;
+}
+
+.hero-card-bottom-text {
+    position: absolute;
+    bottom: 48px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 3;
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.08em;
+    color: rgba(255, 255, 255, 0.5);
 }
 
 /* Grain/Film overlay */
